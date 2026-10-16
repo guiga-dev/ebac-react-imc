@@ -1,0 +1,1 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {calculate,classify} from '../src/imc.js';test('calcula e classifica IMC com limites corretos',()=>{assert.ok(Math.abs(calculate(70,1.75)-22.857142857)<0.0001);[18.49,18.5,25,30,35,40].forEach((n,i)=>assert.equal(classify(n),i));assert.equal(calculate(70,0),null);assert.equal(calculate(-1,1.7),null)});
